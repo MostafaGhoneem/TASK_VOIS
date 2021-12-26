@@ -22,9 +22,12 @@
  
  
 ### Test 
+* ### BaseTest : this is the parent class that the child classes will inherit the methods Like what will happen before and after each class and method like setup the driver and initialize the url
+* ### Dataprovider: this return the date in a specific excel in a specific sheet and provide it to the test when we call it
+* ### SearchTest: here we do our Tests and assert the results
  
 
-### prerequests
+## prerequests
 * JDK 17
 * Maven
 * Allure if You want to generate the report please open the terminal in Intellij and type (allure serve)
