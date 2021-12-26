@@ -21,14 +21,13 @@ public class GUIActions {
     public void clickOn(By by) {
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
         WebElement element = driver.findElement(by);
-//        wait.until(ExpectedConditions.elementToBeClickable(element));
+
         element.click();
     }
 
     public void sendTextTo(By by, String text) {
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
         WebElement element = driver.findElement(by);
-//        wait.until(ExpectedConditions.visibilityOf(element));
         element.clear();
         element.sendKeys(text);
     }
@@ -45,16 +44,4 @@ public class GUIActions {
     }
 
 
-    public String getTextFrom(By by) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        WebElement element = driver.findElement(by);
-//        wait.until(ExpectedConditions.visibilityOf(element));
-        return element.getText();
-    }
-
-    public boolean ensureElementDoesNotExist(By by) {
-        List<WebElement> elements = driver.findElements(by);
-        return elements.isEmpty();
-    }
 }
-
