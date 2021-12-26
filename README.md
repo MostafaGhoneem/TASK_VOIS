@@ -22,9 +22,12 @@
  
  
 ### Test 
-* ### BaseTest : this is the parent class that the child classes will inherit the methods Like what will happen before and after each class and method like setup the driver and initialize the url
-* ### Dataprovider: this return the date in a specific excel in a specific sheet and provide it to the test when we call it
-* ### SearchTest: here we do our Tests and assert the results
+* ### Base
+ * BaseTest : this is the parent class that the child classes will inherit the methods Like what will happen before and after each class and method like setup the driver and   initialize the url
+* ### data_provider
+ *DataProvider : this return the date in a specific excel in a specific sheet and provide it to the test when we call it
+* ### tests
+ *SearchTest : here we do our Tests and assert the results
  
 
 ## prerequests
