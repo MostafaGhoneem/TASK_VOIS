@@ -17,8 +17,8 @@
  * PropertiesManager: to load the propertyfiles
 
 * ### Pages
- *HomePage: to define HomePage Elements and initialize the methods we will perform in this Page
- *SearchPage: to define SearchPage Elements and initialize the methods we will perform in this Page
+ * HomePage: to define HomePage Elements and initialize the methods we will perform in this Page
+ * SearchPage: to define SearchPage Elements and initialize the methods we will perform in this Page
  
  
 ### Test 
