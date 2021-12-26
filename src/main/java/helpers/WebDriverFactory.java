@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -24,6 +24,7 @@ public class WebDriverFactory {
 
             if (browser.equals("Chrome")) driver = getChromeDriver();
             else if (browser.equals("Firefox")) driver = getFirefoxDriver();
+            else if (browser.equals("Edge")) driver = getEdgeDriver();
             else MyLogger.severe(WebDriverFactory.class.getSimpleName(),
                         "No Valid browser name in browser-config file");
         }
@@ -56,7 +57,7 @@ public class WebDriverFactory {
     }
 
     private static WebDriver getFirefoxDriver() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
         WebDriver firefoxDriver;
         if (Boolean.parseBoolean(browserProps.getProperty("headless"))) {
             MyLogger.info(WebDriverFactory.class.getSimpleName(), "Initializing headless Firefox driver");
@@ -73,6 +74,16 @@ public class WebDriverFactory {
         }
 
         return new EventFiringWebDriver(firefoxDriver).register(new SeleniumEventListener());
+    }
+
+    private static WebDriver getEdgeDriver() {
+        WebDriverManager.edgedriver().setup();
+        WebDriver edgeDriver;
+            MyLogger.info(WebDriverFactory.class.getSimpleName(), "Initializing normal Firefox driver");
+
+            edgeDriver = new EdgeDriver();
+
+        return new EventFiringWebDriver(edgeDriver).register(new SeleniumEventListener());
     }
 
 
