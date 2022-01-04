@@ -47,10 +47,10 @@ public class SearchPage {
     public boolean ResultsIsEquals(){
        NumOfEachRound();
         for (Integer r : ListOfResults) {
-            if (!Objects.equals(ListOfResults.get(0), r))
-                return false;
+            if (Objects.equals(ListOfResults.get(0), r))
+                return true;
         }
-        return true;
+        return false;
     }
 
 }
