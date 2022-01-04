@@ -33,9 +33,7 @@ public class SearchTest extends BaseTest {
 
             var searchPage = new SearchPage(getDriver());
 
-            boolean EqualResults = searchPage.ResultsIsEquals();
-
-            Assert.assertTrue(EqualResults);
+            Assert.assertTrue(searchPage.ResultsIsEquals());
 
         }
 
